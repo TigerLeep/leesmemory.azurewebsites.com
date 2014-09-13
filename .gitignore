@@ -1,3 +1,6 @@
 packages/
 braingrow.azurewebsites.com/obj/
 braingrow.azurewebsites.com/bin/
+braingrow.core/obj/
+braingrow.DomainLogic/obj/
+braingrow.Data/obj/
