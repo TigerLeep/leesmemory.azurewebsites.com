@@ -28,6 +28,7 @@ namespace braingrow.Data
       AddCategory("MVC", "Programming with Windows", "");
       AddCategory("Web API", "Programming with Windows", "");
       AddCategory("Dependency Injection", "Programming with Windows", "");
+      AddCategory("SignalR", "Programming with Windows", "");
       AddCategory("Games", null, "This category contains topics about all types of games, including (but not limited to) board, card and video games.");
       AddCategory("Swimming Pools & Hot Tubs", null, "This category contains topics about pools and hot tubs.  Specifically, about the pool and the hot tub that I own.");
 
@@ -50,7 +51,7 @@ namespace braingrow.Data
           new HyperlinkResource()
           {
             Category = this.Categories.Single(c => c.Name == "Linux File System"),
-            Title = "Low Far Linux - File System",
+            Title = "Low Fat Linux - File System",
             Description = "When Linux is installed, a file system is carved out of a chunk of hard disk and formatted so that Linux can use it. A hierarchical (treelike) structure for storing files imposes some order on the file system to help both you and Linux find needed files.",
             Url = "http://lowfatlinux.com/linux-files.html"
           },
