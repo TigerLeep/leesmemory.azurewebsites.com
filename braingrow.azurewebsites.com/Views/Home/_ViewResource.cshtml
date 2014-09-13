@@ -1,0 +1,10 @@
+﻿@using braingrow.Core
+@model ViewResource
+@{
+  this.Layout = null;
+}
+<div class="col-md-4">
+  <h2>@Model.Title</h2>
+  <p>@Model.Description</p>
+  <p>@Html.ActionLink("View Resource", "ViewResource", "Home", new { viewName = @Model.ViewName }, new { @class = "btn btn-default" })</p>
+</div>

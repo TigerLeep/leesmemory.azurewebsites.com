@@ -1,0 +1,10 @@
+﻿@using braingrow.Core
+@model HyperlinkResource
+@{
+  this.Layout = null;
+}
+<div class="col-md-4">
+  <h2>@Model.Title</h2>
+  <p>@Model.Description</p>
+  <p><a href="@Model.Url" class="btn btn-default" target="_blank">Go</a></p>
+</div>

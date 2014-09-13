@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace braingrow.Core
 {
-  public class Resource
+  public class ViewResource : Resource
   {
-    public string Title { get; set; }
-
-    public string Description { get; set; }
-
-    public Category Category { get; set; }
+    public string ViewName { get; set; }
   }
 }

@@ -8,7 +8,7 @@ namespace braingrow.Data
 {
   public interface IBrainGrowContext
   {
-    Category RootCategory { get; set; }
+    List<Category> Categories { get; set; }
     List<Resource> Resources { get; set; }
   }
 }

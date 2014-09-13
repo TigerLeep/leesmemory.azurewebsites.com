@@ -1,31 +1,57 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using braingrow.Core
+@{
+  ViewBag.Title = "Home Page";
+  Category category = ViewBag.Category as Category;
+  List<Category> categories = ViewBag.SubCategories as List<Category>;
+  List<Resource> resources = ViewBag.Resources as List<Resource>;
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+  <h1>@(category == null ? "Root" : category.Name)</h1>
+  <p class="lead">@(category == null ? "Description" : category.Description)</p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+@{
+  int index = 0;
+  foreach (var resource in resources)
+  {
+    if (index % 3 == 0)
+    {
+      <text>@Html.Raw("<div class=\"row\">")</text>
+    }
+    if (resource is HyperlinkResource)
+    {
+      <text>@Html.Partial("~/Views/Home/_HyperlinkResource.cshtml", resource)</text>
+    }
+    else if (resource is ViewResource)
+    {
+      <text>@Html.Partial("~/Views/Home/_ViewResource.cshtml", resource)</text>
+    }
+    else
+    {
+      <text>@Html.Partial("~/Views/Home/_UnknownResource.cshtml", resource)</text>
+    }
+    if (index % 3 == 2 || index == resources.Count - 1)
+    {
+      <text>@Html.Raw("</div>")</text>
+    }
+    index++;
+  }
+}
+
+@{
+  index = 0;
+  foreach (var subCategory in categories)
+  {
+    if (index % 3 == 0)
+    {
+      <text>@Html.Raw("<div class=\"row\">")</text>
+    }
+    <text>@Html.Partial("~/Views/Home/_Category.cshtml", subCategory)</text>
+    if (index % 3 == 2 || index == categories.Count - 1)
+    {
+      <text>@Html.Raw("</div>")</text>
+    }
+    index++;
+  }
+}

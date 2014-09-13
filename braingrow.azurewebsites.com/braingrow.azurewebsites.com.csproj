@@ -155,6 +155,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\_Category.cshtml" />
+    <Content Include="Views\Home\_HyperlinkResource.cshtml" />
+    <Content Include="Views\Home\_ViewResource.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -166,6 +169,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\braingrow.core\braingrow.Core.csproj">
+      <Project>{c70026a7-bea9-476a-84b0-5cfd72eb5214}</Project>
+      <Name>braingrow.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\braingrow.DomainLogic\braingrow.DomainLogic.csproj">
+      <Project>{c83805b3-2bcc-4e64-a8fb-b0dc227392eb}</Project>
+      <Name>braingrow.DomainLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

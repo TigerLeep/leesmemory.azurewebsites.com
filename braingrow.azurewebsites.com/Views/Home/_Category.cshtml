@@ -1,0 +1,10 @@
+﻿@using braingrow.Core
+@model Category
+@{
+  this.Layout = null;
+}
+<div class="col-md-4 category">
+  <h2>@Model.Name</h2>
+  <p>@Model.Description</p>
+  <p>@Html.ActionLink("View Category", "Index", "Home", new { categoryName = @Model.Name }, new { @class = "btn btn-default category" })</p>
+</div>
